@@ -50,7 +50,7 @@ int main()
     {
         addSum += a[i] + b[i];
         multSum += a[i] * b[i];
-        bitSum += a[i] << 1;
+        bitSum += a[i] >> 1;
         subSum += a[i] - b[i];
     }
     t2 = system_clock::now();
