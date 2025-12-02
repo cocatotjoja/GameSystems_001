@@ -44,6 +44,8 @@ int main()
     system_clock::time_point t2 = system_clock::now();
     auto tp1 = duration_cast<nanoseconds>(t2 - t1).count();
     
+    addSum = 0;
+
     // Add && Multiply && Bit shift && Subtract
     t1 = system_clock::now();
     for (int i = 0; i < 1000000; i++)
@@ -60,7 +62,7 @@ int main()
     t1 = system_clock::now();
     for (int i = 0; i < 1000000; i++)
     {
-        fourSum = (a[i] + b[i]) * (a[i] - b[i]);
+        fourSum += (a[i] + b[i]) * (a[i] - b[i]);
     }
     t2 = system_clock::now();
     auto tp3 = duration_cast<nanoseconds>(t2 - t1).count();
@@ -71,16 +73,23 @@ int main()
     {
         if (a[i] < halfRand)
         {
-            ifSum = (a[i] + b[i]) * (a[i] - b[i]);
+            ifSum += (a[i] + b[i]) * (a[i] - b[i]);
         }
     }
     t2 = system_clock::now();
     auto tp4 = duration_cast<nanoseconds>(t2 - t1).count();
     
     
-
+    /*
     cout << "ADD: " << tp1 << endl;
     cout << "Four operations: " << tp2 << endl;
     cout << "Multi operation: " << tp3 << endl;
     cout << "If check: " << tp4 << endl;
+    */
+
+
+    cout << tp1 << endl;
+    cout << tp2 << endl;
+    cout << tp3 << endl;
+    cout << tp4 << endl;
 }
